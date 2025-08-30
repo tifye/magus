@@ -14,14 +14,6 @@ chrome.webRequest.onCompleted.addListener(onRequestCompleted, {
  */
 
 /**
- * @typedef {{
- *  tabId: string,
- *  url: string,
- *  initiator: string | null,
- * }} FontRecord
- */
-
-/**
  * @param {RequestDetails} details
  */
 async function onRequestCompleted(details) {
@@ -37,6 +29,7 @@ async function onRequestCompleted(details) {
         tabId: details.tabId,
         url: details.url,
         initiator: details.initiator || null,
+        ...fontFromUrl(details.url),
     }
 
     const key = keyForTab(details.tabId)
@@ -72,4 +65,18 @@ async function onRequestCompleted(details) {
  */
 function keyForTab(tabId) {
     return `tab:${tabId}`
+}
+
+/**
+ * @param {string} url
+ * @returns {{
+ *  name: string,
+ *  format: string
+ * }}
+ */
+function fontFromUrl(url) {
+    const parts = url.split('/')
+    const filename = parts[parts.length - 1]
+    const [name, format] = filename.split('.')
+    return { name, format }
 }

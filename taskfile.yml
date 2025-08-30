@@ -1,0 +1,6 @@
+version: '3'
+
+tasks:
+  action-build-tailwind:
+    cmds:
+      - tailwindcss -i tailwind.input.css -o src/action/index.css {{.CLI_ARGS}}

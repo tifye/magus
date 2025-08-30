@@ -2,14 +2,40 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magus</title>
     <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
 </head>
 
-<body>
-    Magus
+<body class="p-4 w-96 bg-zinc-800 text-zinc-200">
+    <ul id="font-records" class="flex flex-col gap-4">
+        <template id="font-li-template">
+            <li class="font-li gird grid-rows-2 gap-4 border-b border-zinc-600 pb-4">
+                <div class="flex flex-row gap-4 items-center">
+                    <span class="font-name">sf-pro-display_medium</span>
+                    <span class="font-format rounded-full bg-zinc-700 px-2 py-1">woff2</span>
+                    <span>|</span>
+                    <a target="_blank"
+                        class="font-download hover:text-blue-500 underline hover:cursor-pointer">download</a>
+                </div>
+                <p class="font-example whitespace-nowrap text-ellipsis overflow-hidden text-2xl">
+                    Everyone has the right to freedom of thought, conscience and religion; this right includes freedom
+                    to
+                    change his religion or belief, and freedom, either alone or in community with others and in public
+                    or
+                    private, to manifest his religion or belief in teaching, practice, worship and observance.
+                    Everyone has the right to freedom of opinion and expression; this right includes freedom to hold
+                    opinions without interference and to seek, receive and impart information and ideas through any
+                    media
+                    and regardless of frontiers.
+                    Everyone has the right to rest and leisure, including reasonable limitation of working hours and
+                    periodic holidays with pay.
+                </p>
+            </li>
+        </template>
+    </ul>
 </body>
 
 </html>
