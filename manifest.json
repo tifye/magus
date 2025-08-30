@@ -12,7 +12,7 @@
         "activeTab"
     ],
     "background": {
-        "service_worker": "src/background/background.js"
+        "service_worker": "src/background/service_chrome.js"
     },
     "action": {
         "default_icon": "assets/icon.png",
